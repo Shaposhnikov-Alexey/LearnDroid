@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">LearnDroid</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">Main Menu Fragment</string>
+    <string name="second_fragment_label">Word Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="Main_hello">This is basically main page</string>
+    <string name="List_hello">Here is the list of words</string>
+    <string name="title_words">Words</string>
+    <string name="add_button_content">Add word</string>
+
+    <string name="placeholder_word">Example</string>
+    <string name="button_save">Save</string>
+    <string name="empty_error">Word field must not be empty</string>
+    <string name="toast_not_empty">Word must be not empty</string>
+    <string name="clear_button_content">Clear all words</string>
+
+</resources>
