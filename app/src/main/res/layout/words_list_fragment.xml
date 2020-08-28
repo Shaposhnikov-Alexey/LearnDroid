@@ -73,7 +73,7 @@
         android:layout_height="wrap_content"
         android:contentDescription="@string/clear_button_content"
         android:src="@drawable/ic_baseline_clear_32"
-        android:backgroundTint="@color/colorPeach"
+        android:backgroundTint="@color/colorIndigo"
         android:layout_marginBottom="@dimen/big_padding"
         app:maxImageSize="42dp"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/big_padding"
-        android:backgroundTint="@color/colorPeach"
+        android:backgroundTint="@color/colorPurple"
         app:srcCompat="@drawable/ic_baseline_emoji_emotions_24"
         app:maxImageSize="42dp"
         android:scaleType="center"

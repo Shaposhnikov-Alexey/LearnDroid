@@ -3,8 +3,9 @@
 
 ## Current status:
   ### 1) Simple words database
-   -> implemented (need fixes)
-   -> studied Room, Fragment, ViewModel, RecyclerView, UI basics with ConstraintLayout and etc.
+   -> implemented
+   -> studied Room, Fragment, ViewModel, RecyclerView, ViewBinding, simplest CoroutineScope and suspend usage, UI basics with ConstraintLayout, and etc. also studied that custom drawing is painful
+   -> P.S. Drawing trail for swipe-deleting was one hell of a pain; moreover, it couldn't be fixed withoud hardcode :C
   ### 2) Simple AR
    -> TODO
   ### 3) Sample with coroutines interactions, blocking and staff

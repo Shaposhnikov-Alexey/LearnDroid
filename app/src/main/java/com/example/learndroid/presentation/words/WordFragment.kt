@@ -2,16 +2,17 @@ package com.example.learndroid.presentation.words
 
 import android.os.Bundle
 import android.text.TextUtils
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.learndroid.R
+import com.example.learndroid.adapters.SwipeToDeleteCallback
 import com.example.learndroid.adapters.WordsListAdapter
 import com.example.learndroid.data.entity.Word
 import com.example.learndroid.databinding.WordsListFragmentBinding
@@ -22,9 +23,10 @@ class WordFragment : Fragment() {
     private val viewModel by lazy {
         ViewModelProvider(this).get(WordViewModel::class.java)
     }
-    private val viewAdapter by lazy {
+    private val wordsAdapter by lazy {
         WordsListAdapter()
     }
+
     private var _binding: WordsListFragmentBinding? = null
     private val binding
         get() = _binding!!
@@ -37,18 +39,21 @@ class WordFragment : Fragment() {
     }
 
     override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
         _binding = WordsListFragmentBinding.inflate(inflater, container, false)
 
         binding.recycler.apply{
             setHasFixedSize(true)
-            adapter = viewAdapter
+            adapter = wordsAdapter
             layoutManager = LinearLayoutManager(context)
         }
 
-        viewAdapter.setWords(listOf(Word("Example"), Word("Words")))
+        val itemTouchHelper = ItemTouchHelper(SwipeToDeleteCallback(wordsAdapter))
+        itemTouchHelper.attachToRecyclerView(binding.recycler)
+
+        wordsAdapter.setWords(listOf(Word("Example"), Word("Words")))
 
         return binding.root
     }
@@ -73,10 +78,10 @@ class WordFragment : Fragment() {
 
     private fun render(state: WordListState) {
         when (state) {
-            is WordListState.AddedWord -> viewAdapter.insertWord(state.word)
-            is WordListState.ChangedList -> viewAdapter.setWords(state.wordList)
-            is WordListState.RemovedWord -> viewAdapter.removeWord(state.position)
-            is WordListState.RemovedList -> viewAdapter.setWords(emptyList())
+            is WordListState.AddedWord -> wordsAdapter.insertWord(state.word)
+            is WordListState.ChangedList -> wordsAdapter.setWords(state.wordList)
+            is WordListState.RemovedWord -> wordsAdapter.removeWord(state.position)
+            is WordListState.RemovedList -> wordsAdapter.setWords(emptyList())
         }
     }
 }
