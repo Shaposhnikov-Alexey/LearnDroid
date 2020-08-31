@@ -2,7 +2,7 @@ package com.example.learndroid.presentation.words
 
 import android.app.Application
 import androidx.lifecycle.*
-import com.example.learndroid.data.db.WordRoomDatabase
+import com.example.learndroid.data.db.AppRoomDatabase
 import com.example.learndroid.data.entity.Word
 import com.example.learndroid.data.repository.WordRepository
 import kotlinx.coroutines.Dispatchers
@@ -14,7 +14,7 @@ class WordViewModel(application: Application) : AndroidViewModel(application) {
     val state: MutableLiveData<WordListState> = MutableLiveData()
 
     init {
-        val wordsDao = WordRoomDatabase.getDatabase(application, viewModelScope).wordDao()
+        val wordsDao = AppRoomDatabase.getDatabase(application, viewModelScope).wordDao()
         repository = WordRepository(wordsDao)
         allWords = repository.allWords.value ?: emptyList()
     }

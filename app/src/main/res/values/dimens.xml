@@ -3,4 +3,5 @@
     <dimen name="large_padding">32dp</dimen>
     <dimen name="middle_padding">8dp</dimen>
     <dimen name="min_height">48dp</dimen>
+    <dimen name="button_corner_radius">46dp</dimen>
 </resources>

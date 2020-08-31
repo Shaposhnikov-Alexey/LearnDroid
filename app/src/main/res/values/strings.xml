@@ -17,5 +17,10 @@
     <string name="empty_error">Word field must not be empty</string>
     <string name="toast_not_empty">Word must be not empty</string>
     <string name="clear_button_content">Clear all words</string>
+    <string name="task_words">Words Database</string>
+    <string name="task_ar">simple AR</string>
+    <string name="task_http">Internet request example</string>
+    <string name="task_coroutines">Coroutine task</string>
+    <string name="task_camera">CameraX</string>
 
 </resources>

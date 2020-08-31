@@ -1,21 +1,12 @@
 package com.example.learndroid.presentation.main
 
-import android.content.Context
 import android.os.Bundle
-import android.util.AttributeSet
 import android.view.*
 import android.widget.Toast
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.commit
-import androidx.navigation.findNavController
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.learndroid.R
-import com.example.learndroid.adapters.WordsListAdapter
 import com.example.learndroid.databinding.ActivityMainBinding
-
-import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -35,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         supportFragmentManager.commit {
-            add(R.id.content, MainMenuFragment())
+            add(R.id.container, MainMenuFragment())
         }
 
     }
